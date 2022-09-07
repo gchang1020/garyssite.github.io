@@ -152,33 +152,31 @@ ul.task-list{list-style: none;}
 <script id="quarto-html-after-body" type="application/javascript">
 
   function ackOnInput() {
-    if (document.getElementById('seq').value == -1)
+    seq = document.getElementById('seq').value
+    sid = document.getElementById('sid').value
+    sname = document.getElementById('sname').value
+    surl = document.getElementById('surl').value
+    
+    if (seq == -1)
       m = "Please choose a lab number"
     else {
       var expr_sname = /^(?:[A-Z|a-z]{2,15} ?\b){2,3}$/gi;
       var regex_sname = new RegExp(expr_sname);
 
-      var expr_id = /^\d+$/gi;
-      var regex_id = new RegExp(expr_id);
+      var expr_surl = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+      var regex_surl = new RegExp(expr_surl);
 
-      var expr_id = /^\d+$/gi;
-      var regex_id = new RegExp(expr_id);
+      var expr_sid = /^\d+$/gi;
+      var regex_sid = new RegExp(expr_sid);
 
-      if (document.getElementById('sname').value.match(regex_name))
+      if (sname.match(regex_name))
         m = "Your name is invalid"
 
-      else if (document.getElementById('sid').value.match(regex_id))
+      else if (sid.match(regex_sid))
         m = "Your student ID is invalid"
 
-      else if (document.getElementById('surl').value.match(regex_url))
+      else if (surl.match(regex_url))
         m = "Your web adddr is invalid"
-
-      else
-        m = ""
-        + document.getElementById('seq').value + ',' 
-        + document.getElementById('sid').value + ',' 
-        + document.getElementById('sname').value + ',' 
-        + document.getElementById('surl').value
     }
 
     document.getElementById("div_id").innerHTML = "<br><br>" + m + "<br><br>";
