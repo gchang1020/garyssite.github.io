@@ -103,7 +103,7 @@ ul.task-list{list-style: none;}
   <form id="hw" name="hw">
     <table width="100%" border="1">
       <tr>
-        <td width="40%" align="right">Lab number: </td>
+        <td width="40%" align="right">Lab sequence#: </td>
         <td width="60%">
           <select id='seq'>
             <option value="-1">Please choose</option>
@@ -254,7 +254,10 @@ function sendMail() {
   else
     m = ""
     + "<br><br>"
-    + document.getElementById('sid').value + ',' + document.getElementById('sname').value + ',' + document.getElementById('surl').value
+    + document.getElementById('seq').value + ',' 
+    + document.getElementById('sid').value + ',' 
+    + document.getElementById('sname').value + ',' 
+    + document.getElementById('surl').value
     + "<br><br>"
   
   document.getElementById("div_id").innerHTML = m;
