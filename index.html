@@ -135,7 +135,7 @@ ul.task-list{list-style: none;}
       
       <tr>
         <td width="40%">&nbsp;</td>
-        <td width="60%" align="left"><input type='button' onclick='sendMail()' value="Confirm"/></td>
+        <td width="60%" align="left"><input type='button' onclick='ackOnInput()' value="Confirm"/></td>
       </tr>
     </table>
   </form>
@@ -150,7 +150,42 @@ ul.task-list{list-style: none;}
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  function ackOnInput() {
+    if (document.getElementById('seq').value == -1)
+      m = "Please choose a lab number"
+    else {
+      var expr_sname = /^(?:[A-Z|a-z]{2,15} ?\b){2,3}$/gi;
+      var regex_sname = new RegExp(expr_sname);
+
+      var expr_id = /^\d+$/gi;
+      var regex_id = new RegExp(expr_id);
+
+      var expr_id = /^\d+$/gi;
+      var regex_id = new RegExp(expr_id);
+
+      if (document.getElementById('sname').value.match(regex_name))
+        m = "Your name is invalid"
+
+      else if (document.getElementById('sid').value.match(regex_id))
+        m = "Your student ID is invalid"
+
+      else if (document.getElementById('surl').value.match(regex_url))
+        m = "Your web adddr is invalid"
+
+      else
+        m = ""
+        + document.getElementById('seq').value + ',' 
+        + document.getElementById('sid').value + ',' 
+        + document.getElementById('sname').value + ',' 
+        + document.getElementById('surl').value
+    }
+
+    document.getElementById("div_id").innerHTML = "<br><br>" + m + "<br><br>";
+    document.getElementById('tr_id').style.display = '';
+  } 
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
     const bodyEl = window.document.querySelector("body");
@@ -245,25 +280,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-  
 
-function sendMail() {
-  if (document.getElementById('seq').value == -1)
-    m = "<br><br>Please choose a lab number<br><br>"
-  
-  else
-    m = ""
-    + "<br><br>"
-    + document.getElementById('seq').value + ',' 
-    + document.getElementById('sid').value + ',' 
-    + document.getElementById('sname').value + ',' 
-    + document.getElementById('surl').value
-    + "<br><br>"
-  
-  document.getElementById("div_id").innerHTML = m;
-  document.getElementById('tr_id').style.display = '';
-} 
- 
   
   
 </script>
