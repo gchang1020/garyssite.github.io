@@ -103,6 +103,19 @@ ul.task-list{list-style: none;}
   <form id="hw" name="hw">
     <table width="100%" border="1">
       <tr>
+        <td width="40%" align="right">Lab number: </td>
+        <td width="60%">
+          <select id='seq'>
+            <option value="-1">Please choose</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
         <td width="40%" align="right">Your name: </td>
         <td width="60%"><input type="text" id='sname'/></td>
       </tr>
@@ -235,13 +248,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   
 
 function sendMail() {
-  m = ""
+  if (document.getElementById('seq').value == -1)
+    m = "<br><br>Please choose a lab number<br><br>"
+  
+  else
+    m = ""
     + "<br><br>"
     + document.getElementById('sid').value + ',' + document.getElementById('sname').value + ',' + document.getElementById('surl').value
     + "<br><br>"
+  
   document.getElementById("div_id").innerHTML = m;
   document.getElementById('tr_id').style.display = '';
-}  
+} 
  
   
   
