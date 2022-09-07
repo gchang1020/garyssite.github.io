@@ -131,7 +131,7 @@ ul.task-list{list-style: none;}
     <tr><td>&nbsp;</td></tr>
     <tr id="tr_id">
       <td width="100%" style="display:none;">
-        <div id="divHtml"></div>
+        <div id="div_Html"></div>
       </td>
     <tr>
   </table>
@@ -237,12 +237,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   
 
 function sendMail() {
-  m = "\n" 
+  m = "<br>"      
     + "Please copy the next line and send email to gary.chang@utdallas.edu"
-    + "\n\n\n"
+    + "<br><br>"
     + document.getElementById('sid').value + ',' + document.getElementById('sname').value + ',' + document.getElementById('surl').value
+  document.getElementById("div_Html").innerHTML = m;
   document.getElementById('tr_id').style.display = '';
-  document.getElementById("divHtml").innerHTML = m;
 }  
  
   
