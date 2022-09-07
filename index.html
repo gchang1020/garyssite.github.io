@@ -160,13 +160,13 @@ ul.task-list{list-style: none;}
     if (seq == -1)
       m = "Please choose a lab number"
     else {
-      var expr_sname = /([A-Z|a-z]{2,15}\s){2,3}/gi;
+      var expr_sname = /([a-z]{2,15}\s){2,3}/gi;
       var regex_sname = new RegExp(expr_sname);
 
-      var expr_surl = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+      var expr_surl = /[a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{1,6}\b([-a-z0-9()@:%_\+.~#?&//=]*)?/gi;
       var regex_surl = new RegExp(expr_surl);
 
-      var expr_sid = /\d+/gi;
+      var expr_sid = /\d+/;
       var regex_sid = new RegExp(expr_sid);
 
       if (sname == '' || sname.match(regex_sname))
