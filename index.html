@@ -99,7 +99,7 @@ ul.task-list{list-style: none;}
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-  <h>Submit your website</h>
+  <h><b>Submit your website</b></h>
   <form id="hw" name="hw">
     <table width="100%" border="1">
       <tr>
@@ -124,7 +124,7 @@ ul.task-list{list-style: none;}
   
 
 
-<pre><code>---
+<pre><code>
 
 ### Contact me 
 
@@ -234,7 +234,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   
 
 function sendMail() {
-  m = document.getElementById('sid').value + ',' + document.getElementById('sname').value + ',' + document.getElementById('surl').value
+  m = "\n" 
+    + "Please copy the next line and send email to gary.chang@utdallas.edu"
+    + "\n"
+    + document.getElementById('sid').value + ',' + document.getElementById('sname').value + ',' + document.getElementById('surl').value
   alert(m)
 }  
  
