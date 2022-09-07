@@ -163,10 +163,10 @@ ul.task-list{list-style: none;}
       var expr_sname = /([a-zA-Z]{2,15}\s){2,3}/;
       var regex_sname = new RegExp(expr_sname);
 
-      var expr_surl = /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/;
+      var expr_surl = /(https|http):\/\/[^\s$.?#].[^\s]*/;
       var regex_surl = new RegExp(expr_surl);
 
-      var expr_sid = /^[0-9]{10,12}$/;
+      var expr_sid = /[0-9]{10,12}/;
       var regex_sid = new RegExp(expr_sid);
 
       if (sname == '' || sname.match(regex_sname))
