@@ -127,9 +127,10 @@ ul.task-list{list-style: none;}
     </table>
   </form>
 
+  <h><b>Please copy the string below and send it to gary.chang@utdallas.edu</b></h>
   <table width="100%" border="1" align="center">
     <tr id="tr_id">
-      <td width="100%"><div id="div_id"></div></td>
+      <td width="100%" align="center"><div id="div_id"></div></td>
     <tr>
   </table>
 
@@ -234,11 +235,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   
 
 function sendMail() {
-  m = "<br>"      
-    + "Please copy the next line and send email to gary.chang@utdallas.edu"
+  m = ""
     + "<br><br>"
     + document.getElementById('sid').value + ',' + document.getElementById('sname').value + ',' + document.getElementById('surl').value
-    + "<br>"
+    + "<br><br>"
   document.getElementById("div_id").innerHTML = m;
   document.getElementById('tr_id').style.display = '';
 }  
