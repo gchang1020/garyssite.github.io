@@ -152,21 +152,21 @@ ul.task-list{list-style: none;}
 <script id="quarto-html-after-body" type="application/javascript">
 
   function ackOnInput() {
-    seq = document.getElementById('seq').value
-    sid = document.getElementById('sid').value
-    sname = document.getElementById('sname').value
-    surl = document.getElementById('surl').value
+    seq = document.getElementById('seq').value.trim()
+    sid = document.getElementById('sid').value.trim()
+    sname = document.getElementById('sname').value.trim()
+    surl = document.getElementById('surl').value.trim()
     
     if (seq == -1)
       m = "Please choose a lab number"
     else {
-      var expr_sname = /^([A-Z|a-z]{2,15}\s){2,3}$/gi;
+      var expr_sname = /([A-Z|a-z]{2,15}\s){2,3}/gi;
       var regex_sname = new RegExp(expr_sname);
 
       var expr_surl = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
       var regex_surl = new RegExp(expr_surl);
 
-      var expr_sid = /^\d+$/gi;
+      var expr_sid = /\d+/gi;
       var regex_sid = new RegExp(expr_sid);
 
       if (sname == '' || sname.match(regex_sname))
