@@ -169,13 +169,13 @@ ul.task-list{list-style: none;}
       var expr_sid = /^\d+$/gi;
       var regex_sid = new RegExp(expr_sid);
 
-      if (sname.match(regex_sname))
+      if (sname == '' || sname.match(regex_sname))
         m = "Your name is invalid"
 
-      else if (sid.match(regex_sid))
+      else if (sid == '' || sid.match(regex_sid))
         m = "Your student ID is invalid"
 
-      else if (surl.match(regex_surl))
+      else if (surl == '' || surl.match(regex_surl))
         m = "Your web adddr is invalid"
     }
 
