@@ -160,7 +160,7 @@ ul.task-list{list-style: none;}
     if (seq == -1)
       m = "Please choose a lab number"
     else {
-      var expr_sname = /^(?:[A-Z|a-z]{2,15} ?\b){2,3}$/gi;
+      var expr_sname = /^([A-Z|a-z]{2,15}\s){2,3}$/gi;
       var regex_sname = new RegExp(expr_sname);
 
       var expr_surl = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
