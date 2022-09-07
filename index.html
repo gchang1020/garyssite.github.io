@@ -87,6 +87,28 @@ ul.task-list{list-style: none;}
       </div> <!-- /container-fluid -->
     </nav>
 </header>
+
+  <form id="hw" name="hw" action="">
+    <table width="100%">
+      <tr>
+        <td width="40%">Your name: </td>
+        <td width="60%"><input type="text" id='sname'/></td>
+      </tr>
+      <tr>
+        <td width="40%">Student ID: </td>
+        <td width="60%"><input type="text" id='sid'/></td>
+      </tr>
+      <tr>
+        <td width="40%">Website: </td>
+        <td width="60%"><input type="text" id='surl'/></td>
+      </tr>
+      <tr>
+        <td col=2 align="middle"><input type='button' onclick='sendMail()'/></td>
+      </tr>
+    </table>
+  </form>
+  
+  
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
@@ -217,6 +239,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+  
+
+function sendMail() {
+  m = document.getElementById('sid').value + ',\\n' + document.getElementById('sname').value + ',\\n' + document.getElementById('surl').value
+  alert(m)
+}  
+ 
+  
+  
 </script>
 </div> <!-- /content -->
 
