@@ -127,12 +127,10 @@ ul.task-list{list-style: none;}
     </table>
   </form>
 
-  <table width="100%" border="1">
+  <table width="100%" border="1" align="center">
     <tr><td>&nbsp;</td></tr>
     <tr id="tr_id">
-      <td width="100%" >
-        <div id="div_Html"></div>
-      </td>
+      <td width="100%">&nbsp;</td>
     <tr>
   </table>
 
@@ -241,8 +239,9 @@ function sendMail() {
     + "Please copy the next line and send email to gary.chang@utdallas.edu"
     + "<br><br>"
     + document.getElementById('sid').value + ',' + document.getElementById('sname').value + ',' + document.getElementById('surl').value
-  document.getElementById("div_Html").innerHTML = m;
+  document.getElementById("tr_id").innerHTML = m;
   document.getElementById('tr_id').style.display = '';
+  document.getElementById('tr_id').style.align = 'center';
 }  
  
   
