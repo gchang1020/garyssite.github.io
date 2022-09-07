@@ -115,7 +115,10 @@ ul.task-list{list-style: none;}
         <td width="60%"><input type="text" id='surl'/></td>
       </tr>
 
-      <tr><td colspan="2">&nbsp;</td></tr>
+      <tr>
+        <td width="40%">&nbsp;</td>
+        <td width="60%">&nbsp;</td>
+      </tr>
       
       <tr>
         <td width="40%">&nbsp;</td>
@@ -228,7 +231,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 function sendMail() {
   m = "\n" 
     + "Please copy the next line and send email to gary.chang@utdallas.edu"
-    + "\n"
+    + "\n\n"
     + document.getElementById('sid').value + ',' + document.getElementById('sname').value + ',' + document.getElementById('surl').value
   alert(m)
 }  
