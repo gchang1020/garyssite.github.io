@@ -166,7 +166,7 @@ ul.task-list{list-style: none;}
       var expr_surl = "(https|http):\/\/[^\s$.?#].[^\s]*";
       var regex_surl = new RegExp(expr_surl);
 
-      var expr_sid = "[0-9]{10,12}";
+      var expr_sid = "\d+";
       var regex_sid = new RegExp(expr_sid);
 
       if (sname == '' || sname.match(regex_sname))
