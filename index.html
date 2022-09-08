@@ -171,13 +171,13 @@ ul.task-list{list-style: none;}
       var expr_surl = "[^\s$.?#].[^\s]*";
       var regex_surl = new RegExp(expr_surl);
 
-      if (sname == '' || regex_sname.test(sname))
+      if (sname == '' || !regex_sname.test(sname))
         m = "Your name is invalid"
 
-      else if (sid == '' || regex_sid.test(sid))
+      else if (sid == '' || !regex_sid.test(sid))
         m = "Your student ID is invalid"
 
-      else if (surl == '' || regex_surl.test(surl))
+      else if (surl == '' || !regex_surl.test(surl))
         m = "Your web adddr is invalid"
 
       else
