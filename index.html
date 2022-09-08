@@ -163,11 +163,15 @@ ul.task-list{list-style: none;}
       var expr_sname = "([a-zA-Z]{2,15}\s){2,3}";
       var regex_sname = new RegExp(expr_sname);
 
+      var expr_sid = "\d+";
+      var regex_sid = new RegExp(expr_sid);
+
       var expr_surl = "(https|http)\:\/\/[^\s$.?#].[^\s]*";
       var regex_surl = new RegExp(expr_surl);
 
-      var expr_sid = "\d+";
-      var regex_sid = new RegExp(expr_sid);
+      surl = surl.replace("/(http|https)/gi", '')
+      surl = surl.replace("/\:\/\//gi", '')
+
 
       if (sname == '' || sname.match(regex_sname))
         m = "Your name is invalid"
