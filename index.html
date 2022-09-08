@@ -166,10 +166,8 @@ ul.task-list{list-style: none;}
       var expr_sid = "\d+";
       var regex_sid = new RegExp(expr_sid);
 
-      var expr_surl = "(https|http)\:\/\/[^\s$.?#].[^\s]*";
+      var expr_surl = "^(https?)\:\/\/[^\s$.?#].[^\s]*";
       var regex_surl = new RegExp(expr_surl);
-
-      surl = surl.replace("/^(https?)\:\/\//gi", '')
 
       if (sname == '' || sname.match(regex_sname))
         m = "Your name is invalid"
