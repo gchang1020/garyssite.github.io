@@ -177,6 +177,9 @@ ul.task-list{list-style: none;}
 
       else if (surl == '' || surl.match(regex_surl))
         m = "Your web adddr is invalid"
+
+      else
+        m = seq+","+sid+","+sname+","+surl
     }
 
     document.getElementById("div_id").innerHTML = "<br><br>" + m + "<br><br>"
