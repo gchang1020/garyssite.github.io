@@ -135,7 +135,7 @@ ul.task-list{list-style: none;}
       
       <tr>
         <td width="40%">&nbsp;</td>
-        <td width="60%" align="left"><input type='button' onclick='ackOnInput()' value="Confirm"/></td>
+        <td width="60%" align="left"><input type='button' onclick='onInput()' value="Confirm"/></td>
       </tr>
     </table>
   </form>
@@ -151,7 +151,7 @@ ul.task-list{list-style: none;}
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 
-  function ackOnInput() {
+  function onInput() {
     seq = document.getElementById('seq').value.trim()
     sid = document.getElementById('sid').value.trim()
     sname = document.getElementById('sname').value.trim()
@@ -160,13 +160,13 @@ ul.task-list{list-style: none;}
     if (seq == -1)
       m = "Please choose a lab number"
     else {
-      var expr_sname = /([a-zA-Z]{2,15}\s){2,3}/;
+      var expr_sname = ([a-zA-Z]{2,15}\s){2,3};
       var regex_sname = new RegExp(expr_sname);
 
-      var expr_surl = /(https|http):\/\/[^\s$.?#].[^\s]*/;
+      var expr_surl = (https|http):\/\/[^\s$.?#].[^\s]*;
       var regex_surl = new RegExp(expr_surl);
 
-      var expr_sid = /[0-9]{10,12}/;
+      var expr_sid = [0-9]{10,12};
       var regex_sid = new RegExp(expr_sid);
 
       if (sname == '' || sname.match(regex_sname))
