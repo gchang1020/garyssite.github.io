@@ -156,6 +156,8 @@ ul.task-list{list-style: none;}
     sid = document.getElementById('sid').value.trim()
     sname = document.getElementById('sname').value.trim()
     surl = document.getElementById('surl').value.trim()
+    surl = surl.replace("https://", "")
+    surl = surl.replace("http://", "")
     
     if (seq == -1)
       m = "Please choose a lab number"
@@ -166,7 +168,7 @@ ul.task-list{list-style: none;}
       var expr_sid = "\d+";
       var regex_sid = new RegExp(expr_sid);
 
-      var expr_surl = "^(https?)\:\/\/[^\s$.?#].[^\s]*";
+      var expr_surl = "[^\s$.?#].[^\s]*";
       var regex_surl = new RegExp(expr_surl);
 
       if (sname == '' || regex_sname.test(sname))
