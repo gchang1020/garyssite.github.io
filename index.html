@@ -103,7 +103,17 @@ ul.task-list{list-style: none;}
   <form id="hw" name="hw">
     <table width="100%" border="1">
       <tr>
-        <td width="40%" align="right">Lab sequence#: </td>
+        <td width="40%" align="right">Class: </td>
+        <td width="60%">
+          <select id='which'>
+            <option value="-1">Please choose</option>
+            <option value="6356">EPPS-63561</option>
+            <option value="6302">EPPS-6302</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td width="40%" align="right">Lab number: </td>
         <td width="60%">
           <select id='seq'>
             <option value="-1">Please choose</option>
@@ -156,6 +166,7 @@ ul.task-list{list-style: none;}
 <script id="quarto-html-after-body" type="application/javascript">
 
   function onInput() {
+    which = document.getElementById('which').value.trim()
     seq = document.getElementById('seq').value.trim()
     sid = document.getElementById('sid').value.trim()
     sname = document.getElementById('sname').value.trim()
@@ -163,8 +174,10 @@ ul.task-list{list-style: none;}
     surl = surl.replace("https://", "")
     surl = surl.replace("http://", "")
     
-    if (seq == -1)
-      m = "Please choose a lab number"
+    if (which == -1)
+      m = "Please choose class"
+    else if (seq == -1)
+      m = "Please choose a lab"
     else {
       if (sname == '' || !/^[a-z\s]{3,20}$/gi.test(sname))
         m = "Your name is invalid"
@@ -176,7 +189,7 @@ ul.task-list{list-style: none;}
         m = "Your web adddr is invalid"
 
       else
-        m = seq+","+sname+","+sid+","+surl
+        m = which+","+seq+","+sname+","+sid+","+surl
     }
 
     document.getElementById("div_id").innerHTML = "<br><br>" + m + "<br><br>"
