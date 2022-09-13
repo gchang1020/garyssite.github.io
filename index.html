@@ -76,10 +76,10 @@ ul.task-list{list-style: none;}
     <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./research.html">Research</a>
+    <a class="nav-link" href="./labs.html">Labs</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">About</a>
+    <a class="nav-link" href="./groups.html">Groups</a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -99,102 +99,13 @@ ul.task-list{list-style: none;}
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-  <h><b>1. Create your report</b></h>
-  <form id="hw" name="hw">
-    <table width="100%" border="0">
-      <tr>
-        <td width="40%" align="right">Class: </td>
-        <td width="60%">
-          <select id='which'>
-            <option value="-1">Please choose</option>
-            <option value="6302">EPPS-6302</option>
-            <option value="6356">EPPS-6356</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td width="40%" align="right">Lab number: </td>
-        <td width="60%">
-          <select id='seq'>
-            <option value="-1">Please choose</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td width="40%" align="right">Your name: </td>
-        <td width="60%"><input type="text" id='sname'/></td>
-      </tr>
-      <tr>
-        <td width="40%" align="right">Student ID: </td>
-        <td width="60%"><input type="text" id='sid'/></td>
-      </tr>
-      <tr>
-        <td width="40%" align="right">Website: </td>
-        <td width="60%"><input type="text" id='surl'/></td>
-      </tr>
-
-      <tr>
-        <td width="40%">&nbsp;</td>
-        <td width="60%">&nbsp;</td>
-      </tr>
-      
-      <tr>
-        <td width="40%">&nbsp;</td>
-        <td width="60%" align="left"><input type='button' onclick='onInput()' value="Confirm"/></td>
-      </tr>
-    </table>
-  </form>
-
-  <h><b>2. Creat Email with "lab report" as the SUBJECT</b></h>
-  <br>
-  <h><b>3. Copy the string below and place it in the Email</b></h>
-  <br>
-  <h><b>4. Send the Email to utd60@yahoo.com</b></h>
-  <table width="100%" border="1" align="center">
-    <tr id="tr_id">
-      <td width="100%" align="center"><div id="div_id"></div></td>
-    <tr>
-  </table>
+  
 
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 
-  function onInput() {
-    which = document.getElementById('which').value.trim()
-    seq = document.getElementById('seq').value.trim()
-    sid = document.getElementById('sid').value.trim()
-    sname = document.getElementById('sname').value.trim()
-    surl = document.getElementById('surl').value.trim()
-    surl = surl.replace("https://", "")
-    surl = surl.replace("http://", "")
-    
-    if (which == -1)
-      m = "Please choose class"
-    else if (seq == -1)
-      m = "Please choose a lab"
-    else {
-      if (sname == '' || !/^[a-z\s]{3,20}$/gi.test(sname))
-        m = "Your name is invalid"
-
-      else if (sid == '' || !/^\d+$/.test(sid))
-        m = "Your student ID is invalid"
-
-      else if (surl == '' || !/^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/gi.test(surl))
-        m = "Your web adddr is invalid"
-
-      else
-        m = which+","+seq+","+sname+","+sid+","+surl
-    }
-
-    document.getElementById("div_id").innerHTML = "<br><br>" + m + "<br><br>"
-    document.getElementById('tr_id').style.display = ''
-  }
+  
 
   window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
