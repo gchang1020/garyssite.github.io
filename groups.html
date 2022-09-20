@@ -267,7 +267,7 @@ let createRow = () => {
 			ele.setAttribute('type', 'text');
 			ele.setAttribute('value', '');
 			if (c==1) ele.setAttribute('placeholder', "Name");
-			else ele.setAttribute('placeholder', "StudentID");
+			else ele.setAttribute('placeholder', "NetID");
 			
 			td.appendChild(ele);
 		}
@@ -293,29 +293,50 @@ let createKey = () => {
 	
 	else {
 		tmp = ''
+		okayed = false;
+
 		// loop through each row of the table
 		for (row = 1; row < myTab.rows.length - 1; row++) {
-
 			// loop through each cell in a row				
 			t = '';
 			for (c = 0; c < myTab.rows[row].cells.length; c++) {
+					okayed = true;
 			    let element = myTab.rows.item(row).cells[c];
 			    if (element.childNodes[0].getAttribute('type') == 'text') {
-			    		if (element.childNodes[0].value != '')
+			    		if (element.childNodes[0].value != '') {
+			    			v = element.childNodes[0].value;
+			    			
+			    			if (c==1 && (v == '' || !/^[a-z\s\-]{3,20}$/gi.test(v))) {
+			    				okayed = false;
+			    				break;
+			    			}
+			    			else if (c==2 && (v == '' || !/^([a-z]{3})([0-9]{6,})$/i.test(v))) {
+			    				okayed = false;
+			    				break;
+			    			}
+			    			
 								t += "" + element.childNodes[0].value + ",";
+							}
+							else {
+								okayed = false;
+								break;
+							}
 			    }
 			}
-		    
-			if (t != '') tmp += t+';';
+
+	    if (!okayed) break;
+			else if (t != '') tmp += t+';';
 		}
 		
-		tmp = tmp.replace(new RegExp(',;', 'g'), ';')
-		
-		which = document.getElementById('which').value;
-
-		m =  which+';' + tmp;
-		if (m == which+';')
-			m = "Please add members"
+		if (okayed) {
+			tmp = tmp.replace(new RegExp(',;', 'g'), ';')
+			which = document.getElementById('which').value;
+			m =  which+';' + tmp;
+			if (m == which+';') m = "Please add members"
+		}
+		else {
+			m = "Invalid names and/or NetID";			
+		}
 	} 
 	
 	document.getElementById("div_id").innerHTML = "<br><br>" + m + "<br><br>"

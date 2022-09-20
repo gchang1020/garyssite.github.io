@@ -202,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <td width="60%"><input type="text" id='sname'/></td>
     </tr>
     <tr>
-      <td width="40%" align="right">Student ID: </td>
+      <td width="40%" align="right">Your NetID: </td>
       <td width="60%"><input type="text" id='sid'/></td>
     </tr>
     <tr>
@@ -254,8 +254,12 @@ function createKey() {
     if (sname == '' || !/^[a-z\s\-]{3,20}$/gi.test(sname))
       m = "Your name is invalid"
 
-    else if (sid != '' && !/^\d+$/.test(sid))
-      m = "Your student ID is invalid"
+		//student ID not allowed
+    //else if (sid != '' && !/^\d+$/.test(sid))
+
+    //student netID
+    else if (sid == '' || !/^([a-z]{3})([0-9]{6,})$/i.test(sid))
+      m = "Your student NetID is invalid"
 
     else if (surl == '' || !/^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/gi.test(surl))
       m = "Your web adddr is invalid"
